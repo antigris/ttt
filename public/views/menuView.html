@@ -1,0 +1,38 @@
+﻿
+<div class='container'>
+      <h1>Меню</h1>
+      <table class=table>
+             <thead>
+                  <td colspan="2"><button class="btn-success" ng-click="menuCtrl.game(true)">Новая игра</button></td>                         
+                  <td colspan="2"><button class="btn-success" ng-click="menuCtrl.game()" ng-disabled="!menuCtrl.state">Продолжить</button></td> 
+                  <td colspan="2"><button class="btn-primary" ng-click="menuCtrl.score()">Результаты</button></td>                         
+                  <td colspan="2"><button class="btn-danger" ng-click="menuCtrl.logout()">Выйти ...</button></td>                             
+            </thead>
+            <tbody>
+            <tr class = "bg-success">
+                  <td colspan="2">Вы:</td>
+                  <td colspan="2">{{menuCtrl.player.name}}</td>
+                  <td colspan="2">{{menuCtrl.player.acr}}</td>
+                  <td colspan="2"><button class="btn-success" ng-click="menuCtrl.saveState()" ng-disabled="!menuCtrl.state">Сохранить</button></td>  
+            </tr>
+            <tr class = "bg-warning">
+                  <td colspan="2">Оппонент:</td>
+                  <td colspan="2">Компьютер</td>
+                  <td colspan="2">{{menuCtrl.player.cpu}}</td>          
+                  <td colspan="2"><button class="btn-warning" ng-click="menuCtrl.loadState()">Загрузить</button></td> 
+            </tr>
+            <tr  class = "bg-info">
+                  <td colspan="2">Уровень:</td>
+                  <td colspan="2">{{menuCtrl.sizes[menuCtrl.size-2].value}}</td>
+                  <td colspan="2">{{menuCtrl.sizes[menuCtrl.size-2].key}}X{{menuCtrl.sizes[menuCtrl.size-2].key}}</td>
+                  <td colspan="2"><button class="btn-primary" ng-click="menuCtrl.showScale()">Выбрать</button></td>         
+            </tr>
+            <tr  class = "bg-danger" ng-show='menuCtrl.scaleShown'>
+               <td ng-repeat="size in menuCtrl.sizes">
+                   <button class="cellButton" ng-click='menuCtrl.selectLevel(size.key)'>{{size.key}}X{{size.key}}</button>
+               </td>
+            </tr>
+            </tbody>
+
+      </table>
+</div>

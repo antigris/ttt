@@ -1,0 +1,21 @@
+
+<div class="container" >
+    <h1>Вход</h1>
+    <table>
+        <tr>
+            <td>Имя:</td>
+            <td colspan="2"><input type="text" placeholder="введите имя" ng-model = log ></td>
+        </tr>
+        <tr>
+            <td>Пароль:</td>
+            <td colspan="2"><input type="password" placeholder="введите пароль" ng-model = pas ></td>
+        </tr>
+        <tr>        
+            <td><button class = 'btn-success' ng-click="loginCtrl.login('Инкогнито', '0')">Инкогнито</button></td> 
+            <td><button class = 'btn-primary' style="float: right;" ng-disabled  = !log  ng-click='loginCtrl.add(log, pas)'>Новый игрок</button></td>
+            <td><button class = 'btn-success' style="float: right;" ng-disabled  = !log  ng-click='loginCtrl.login(log, pas)'>Войти</button></td>
+        </tr>
+    </table>
+</div>
+
+

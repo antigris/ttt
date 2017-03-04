@@ -1,0 +1,37 @@
+<!DOCTYPE>
+<html ng-app = "ttt">
+    <head>
+        <base href="/" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.js"></script>
+        <script src="javascripts/app.config.js"></script>
+        <script src="javascripts/controllers/loginController.js"></script>
+        <script src="javascripts/controllers/menuController.js"></script>
+        <script src="javascripts/controllers/gameController.js"></script>
+        <script src="javascripts/controllers/scoreController.js"></script>
+        <script src="javascripts/controllers/backController.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+         integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="stylesheets/style.css" />
+
+
+        <title>
+            TIC-TAC-TOE
+        </title>
+    </head>
+    <body ng-controller="backController">
+       <canvas></canvas>
+            <div class='overCanvas'>
+                <div ui-view = 'login'/>
+                <div ui-view = 'menu'/>
+                <div ui-view = 'game'/>
+                <div ui-view = 'score'/>
+            </div>
+    </body>
+</html>

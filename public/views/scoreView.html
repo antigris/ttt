@@ -1,0 +1,29 @@
+﻿<div class="container">
+    <h1>Результаты</h1>
+    <table class="table">
+        <thead>
+               <!--   <td><button class="btn-success" ng-click="menuCtrl.game()">Начать игру</button></td>                         
+                  <td><button class="btn-success" ng-click="menuCtrl.load()">Загрузить</button></td> -->
+                  <td></td><td></td> <td></td>
+                  <td><button class="btn-primary" ng-click="scoreCtrl.menu()">В меню</button></td>                         
+                  <td><button class="btn-danger" ng-click="scoreCtrl.logout()">Выйти</button></td>
+            <tr >
+                <th class="bg-primary">Игрок:</th>
+                <th class="bg-success">Побед:</th>
+                <th class="bg-danger">Поражений:</th>
+                <th class="bg-warning">Вничью:</th>  
+                <th class="bg-info">Всего:</th>  
+            </tr>          
+        </thead>
+        <tbody>
+
+            <tr ng-repeat="player in scoreCtrl.score | orderBy:'score.lose':false | orderBy:'score.draw':true |orderBy:'score.wins':true |  limitTo: 11">
+                <td class="bg-primary" >{{player.name}}</td>
+                <td class="bg-success">{{player.score.wins}}</td>
+                <td class="bg-danger">{{player.score.lose}}</td>
+                <td class="bg-warning">{{player.score.draw}}</td>
+                <td class="bg-info">{{player.score.draw + player.score.lose + player.score.wins}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

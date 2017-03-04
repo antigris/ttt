@@ -1,0 +1,36 @@
+<div class="container">
+    <h1>Игра</h1>
+    <table class="table">
+        <thead>
+                  <td><button class="btn-success" ng-click="gameCtrl.restart()">Заново</button></td>                         
+              <!--    <td><button class="btn-success" ng-click="menuCtrl.load()">Загрузить</button></td> 
+                  <td></td><td></td>-->
+                  <td ><button class="btn-primary" ng-click="gameCtrl.menu()">В меню</button></td>                         
+                  <td ><button class="btn-danger" ng-click="gameCtrl.logout()">Выйти</button></td>          
+        </thead>
+        <tbody>
+            <tr class="bg-success">
+                <td >Вы</td>
+                <td colspan="2">{{gameCtrl.player}}</td>
+            </tr>
+            <tr class="bg-warning">
+                <td >Оппонент</td>
+                <td colspan="2">{{gameCtrl.computer}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+   
+</div>
+<div class="container">
+ <table>
+            <tr ng-repeat ="line in gameCtrl.board" ng-init="outerIndex=$index">
+               <td ng-repeat="cell in line" ng-init="innerIndex=$index">
+                   <button ng-class="gameCtrl.color(outerIndex.toString()+innerIndex.toString())" ng-click="gameCtrl.step(outerIndex.toString()+innerIndex.toString())"
+                   ng-disabled = cell>
+                        {{cell}}
+                    </button>
+               </td>
+            </tr> 
+ </table>
+</div>
